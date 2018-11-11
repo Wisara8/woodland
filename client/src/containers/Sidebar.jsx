@@ -33,6 +33,27 @@ class Sidebar extends Component {
     */
 
     const items = [];
+    const projects = this.props.projects;
+    const sites = this.props.sites;
+
+    projects.forEach(function(proj) {
+      let newObj = {}
+      newObj["id"] = proj.id;
+      newObj["name"] = proj.name;
+      newObj["items"] = [];
+      // let tempArray = [];
+      proj.sites.forEach(function(site) {
+        let num = site - 1;
+        let item = sites[num];
+        newObj.items.push(item);
+      });
+      items.push(newObj);
+    });
+      console.log(this.props);
+      // console.log(this.props.projects[0].name);
+      // console.log(this.props.projects[0].sites[0]);
+      // console.log(this.props.sites);
+      console.log("items", items);
 
     return <List items={ items } onClickSubitem={ this.props.centerMapOnSite } />
   }
