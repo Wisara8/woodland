@@ -35,7 +35,7 @@ class Sidebar extends Component {
     const items = [];
     const projects = this.props.projects;
     const sites = this.props.sites;
-
+      //Build the items array to be rendered by <List />
     projects.forEach(function(proj) {
       let newObj = {}
       newObj["id"] = proj.id;
