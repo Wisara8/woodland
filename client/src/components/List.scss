@@ -1,0 +1,10 @@
+.panel {
+  .panel-body {
+    display: none;
+  }
+  & .is-expanded {
+    .panel-body {
+      display: block;
+    }
+  }
+}
